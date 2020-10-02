@@ -29,7 +29,11 @@ export default function ZipCodeScreen() {
     return (
         <View>
             <ImageBackground source={require('./bg2.jpg')} style={styles.backdrop}>
-            <Button title="Profile" onPress={() => navigation.navigate('Profiles')}></Button>
+            <TouchableHighlight onPress={() => navigation.navigate('Profiles')}>
+            <View>
+            <Text style = {styles.text1}>Profiles</Text>
+            </View>
+            </TouchableHighlight>
             <FlatList
                 data={availableZipItems}
                 keyExtractor={_keyExtractor}
@@ -53,6 +57,7 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     text1: {
+        marginTop: 10,
         backgroundColor: 'black',
         width: 'auto',
         height: 'auto',
@@ -66,5 +71,9 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 70,
         opacity: 0.6,
+    },
+    text3: {
+        color: 'black',
+        marginVertical: 8,
     }
 });
