@@ -29,6 +29,7 @@ export default function ZipCodeScreen() {
     return (
         <View>
             <ImageBackground source={require('./bg2.jpg')} style={styles.backdrop}>
+            <Button title="Profile" onPress={() => navigation.navigate('Profiles')}></Button>
             <FlatList
                 data={availableZipItems}
                 keyExtractor={_keyExtractor}
@@ -36,7 +37,7 @@ export default function ZipCodeScreen() {
                 
             />
             <StatusBar style="auto" />
-            <Button title="Profile" onPress={() => navigation.navigate('Profiles')}></Button>
+            
             
             <Button title="Press me" color="#f194ff" onPress={() => Alert.alert('development by tang')}/>
         
