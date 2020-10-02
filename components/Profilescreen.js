@@ -11,7 +11,6 @@ const availableZipItems = [
 const ZipItem = ({ Name, Tel ,Faculty}) => (
 
         <View>
-            <Text style = {styles.text1}>Profiles</Text>
             <Text style = {styles.text3}>Name: {Name}</Text>
             <Text style = {styles.text3}>Tel: {Tel}</Text>
             <Text style = {styles.text3}>Faculty: {Faculty}</Text>
@@ -28,7 +27,7 @@ export default function Profilescreen() {
         <View>
             <ImageBackground source={require('./bg2.jpg')} style={styles.backdrop}>
             <View>
-            <text>Tang</text>
+            <Text style = {styles.text1}>Profiles</Text>
             </View>
             <FlatList
                 data={availableZipItems}
@@ -36,17 +35,7 @@ export default function Profilescreen() {
                 renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
                 
             />
-            <StatusBar style="auto" />
-            <Button title="Profile" onPress={() => navigation.navigate('pro')}>
-            </Button>
-        <Button
-        title="Press me"
-        color="#f194ff"
-        onPress={() => Alert.alert('development by tang')}
-        />
-        
-        
-
+            <StatusBar style="auto" />        
             </ImageBackground>
         </View>
     );
